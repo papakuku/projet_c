@@ -12,8 +12,9 @@ player.o : player.c
 clean:
 	rm -rf *.o
 
-mrproper :	clean
-	rm -rf prog
+mrproper : clean
+	rm -rf progi
+
 
 
 zip: 
