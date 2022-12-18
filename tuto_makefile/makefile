@@ -1,20 +1,28 @@
-all : prog
 
-prog : main.o player.o
-	gcc -o prog main.o player.o
-
-main.o : main.c
-	gcc -o main.o -c main.c
-
-player.o : player.c
-	gcc -o player.o -c player.c
-
-clean:
-	rm -rf *.o
-
-mrproper :	clean
-	rm -rf prog
+CC=gcc
+EXEC=prog
+SRC= $(wildcard *.c)
+OBJ= $(SRC:.c=.o)
 
 
-zip: 
-	zip -c  chacha.zip main.c player.c player.h
+
+all : $(EXEC)
+
+
+%.o :  %.c
+	$(CC) -o $@ -c $<
+
+$(EXEC) : $(OBJ)
+	$(CC) -o $@ $^
+
+
+
+
+
+
+
+
+
+
+
+

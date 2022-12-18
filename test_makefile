@@ -1,21 +1,103 @@
-all : prog
+CC=gcc
+EXEC=prog
 
-prog : main.o player.o
-	gcc -o prog main.o player.o
+all : $(EXEC)
+
+$(EXEC) : main.o player.o
+	$(CC) -o $(EXEC) player.o main.o
 
 main.o : main.c
-	gcc -o main.o -c main.c
+	$(CC) -o main.o -c main.c
 
 player.o : player.c
-	gcc -o player.o -c player.c
+	$(CC) -o player.o -c player.c
 
-clean:
+
+clean :
 	rm -rf *.o
 
-mrproper : clean
-	rm -rf progi
+mrproper: clean
+	rm -rf prog
 
 
 
-zip: 
-	zip -c  chacha.zip main.c player.c player.h
+
+#variables special:  $@ nom cible /  $< nom premiere dependance / $^ liste dependance / $? liste dependance plus recent que lq cible / $* nom fichier sans son extension:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
