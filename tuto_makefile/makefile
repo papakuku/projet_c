@@ -16,8 +16,11 @@ $(EXEC) : $(OBJ)
 	$(CC) -o $@ $^
 
 
+clean:
+	rm -r *.o
 
-
+mrproper: clean
+	rm -r prog
 
 
 
