@@ -1,0 +1,209 @@
+
+
+|    VIM   |
+
+
+: help windows.txt
+:help tabpage.txt
+:Tabnew600
+:Explore
+:Netrw
+:buff 1
+
+
+
+sudo apt install vim
+sudo apt install curl
+dans la logitech install GVim
+do apt install gnome-tweaks
+
+
+
+vi ~/.vimrc :
+
+
+
+set number
+set relativenumber
+set tabstop=4
+set shiftwidth=4
+set autoindent
+set mouse=a
+colorscheme slate
+
+
+call  plug#begin()
+
+Plug 'vim-airline/vim-airline'
+Plug  'scrooloose/nerdtree'
+
+
+call  plug#end()
+
+
+!racourci nerdtree
+
+:map  <C-n>  :NERDTree    
+:map <C-y> "+y
+:map <C-p> "+p
+
+
+
+:ligne de commande pour ajouter vim-plugin:
+
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+dans vim:        plug install
+
+
+-----------------------------------------------------------------------------
+Quickfixlist tuto:
+https://vimdoc.sourceforge.net/htmldoc/quickfix.html#quickfix-window
+----------------------------------------------------------------------------
+
+      --------------
+      |  NOTICE :  |
+      --------------
+
+
+
+:q! pour sortir sans enregister du fichier vim
+:wq pour sortir en enrgistrant
+:w  pour enregistrer
+
+
+i   pour le insert mod     l'ecriture apparait avant le curseur
+a   pour le insert mod     l'ecriture apparait apres le curseur
+o   pour le inser mod      l'ecriture apparait a la ligne d'apres
+
+I   pour le insert mod     l'ecriture apparait en debut de ligne     
+A   pour le insert mod     l'ecriture apparait en fin de ligne
+O   pour le insert mod     l'ecriture apparait la ligne d'avant
+
+
+ escap =  goout to  inser mod
+
+
+ctrl+r    = go on
+u         = go back
+.         = execute the command just executed before 
+
+r + <lettre>  = change the letter by other letter
+
+             "delet mean cut"
+d =delet
+dd =delet the all line
+D  =capital D delet the rest of the line
+diw =delet inner word
+d0 =delette the begining of the line
+d$ = delet the end of the line
+
+
+               "c =change"
+
+cc =delet end go in insert mode
+ciw =change inner word
+ci" = change everything inside the quotation mark
+ci( = change everything inside the parenthese
+ci< = change everything inside the angle bracket
+ci{ = change everything inside the curly bracket
+ci[ = change everything inside the sqare bracket
+
+
+
+y =copy
+yy =copy the full line
+
+
+p =paste after
+P = capital p paste before
+5p5 =paste five time five word
+
+
+
+w = jump to the next word
+b = back to the previous word
+
+0 = back to the begining of the line
+$ = go to the end of the line
+
+% = for jump from beginimg curly bracket to the end
+
+t+<lettre> = jump to the next leter
+f+<lettre> = back-jump to the previous leter
+
+
+
+gg = jump to begining file
+G =jump to the end of the file
+zz= center your text
+
+
+
+: 100  = send you to the line 100
+
+
+visual mode....select line+ >  = edentation on right
+visual mode....select line+ >  = edentation on left
+
+select line and "="      = edentation all the script selelected
+gg=G endent propably all the text
+
+/ <word>  = jump to the word inside the script 
+/ <word>  +n   =jump to the word and and jump to the next similar word
+/ <word>  +N   =jump-back to the pevious word
+? <word>   =  do same but from the end to the beginig
+
+
+m + <letter> = fix one line  in the script
+' + <letter> = jump to this line
+
+:s%/word_selected/new_word/g  = all the word selected will be change by the new word
+
+<visual mode > :s/word_selected/new_word/g = change the vord only in the part selct by visual
+
+
+:reg   = acces to register
+------------
+if you copy script and after you want delete other script and paste your script copy 
+ you must use "0p   =register last move zero and paste
+------------
+
+
+       |macros|
+
+:q<letter>       "  writing macros"               q
+
+@<letter>   execute your macros
+
+
+files: 
+
+
+
+:n Or :bn - switch to the next file
+
+:N Or :bp - switch to the previous file
+
+:bf - switch to the first file
+
+:bl - switch to the last file
+
+:b number - switch to a specific file number(for file number 3, use the command “b 3”):
+
+:b filename - switch to a specific file filename(for file name file1, use “:b file1”)
+
+:wall - save all open files
+
+:bw - quit the current file
+
+qall - quit all open files
+
+:qall! - forcefully quit all the files, discarding the changes:
+
+
+
+
+
+
+

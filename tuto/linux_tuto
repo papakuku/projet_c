@@ -1,0 +1,943 @@
+ 
+ 				
+ 						|   LINUX   |
+ 			
+
+
+
+ 
+      racourci clavier........................53
+      chercher des  periphériques.......................62
+      droits permissions dossier..............80      
+      archiver ...............................108
+      compresser..............................121
+      difference entre 2 fichiers.............177											
+      apt telecharger des paquets.............192
+      ppa.....................................239
+      info systeme............................263
+      processus et signal.....................283
+      arboressence de linux...................357
+      flux de redirection.....................400
+      planification des taches................455
+      compte utilisateur......................574
+      reseau..................................680
+      commande bash...........................Fin
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ * = utiliser pour tout | exemple: *.txt  (tous les fichiers txt)
+
+ctrl + h  = affiche fichier caché
+ctrl + y  = revenir en avant
+ctrl + t = ouvre un terminal
+ubuntu:
+ctrl+a   =ouvre menu application
+
+
+
+
+
+lspci = lister les périphérique pci
+
+lspci | grep Ethernet = pour recuperer un resultat spécifique
+
+lspci -vvv > out.txt  = erigistre lspci (avec chaque "v" représente un niveau de détail) dans un fichier "out.txt"
+
+gedit out. txt = pour editer le fichier out.txt
+
+lspci -a = le "-a" donne de l'info sur la commande
+
+ lsblk lister les partitions
+
+lsusb = lister les usb
+
+dmesg = info sur le noyau (lier avec un grep ,peut etre util)
+
+whereis = pour trouvé toutes les info sur exemple:pyton ...whereis python
+  
+ which = pour trouver une commande
+ 
+ find = pour chercher dans l'arboressence |  ex: find -name "fic.txt"      find -type d -name "icon"  (d= repertoire/ f= fichier)
+ 
+ grep = pour filtrer un mot dans un fichier (ou une commande avec un pipe)
+ 
+ sort= pour trier
+
+
+
+
+
+
+
+
+
+
+
+|   permission pour les fichiers  |
+
+
+ chmod 777 <fichier ou dossier> ...............pour accorder les droit de lecture ou d'ecriture ou d'execution
+ r = 4 / w = 2 / x =1
+ 
+ r = lecture    w = ecriture  x = execution      - = pas de droit
+-rw-rw-r-- 1 za
+ 
+"-" = fichier(ou "d" pour dossier) / 3 lettre = utilisateur / 3lettres = groupe / 3 lettres = les autre 
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+
+| archiver  / compresser | 
+
+
+
+ 
+  tar=archiver
+ tar -cf <nom archive> <nom fichier> ...........pour creer une archive
+ 
+ tar -tf <nom archive> ........................pour voir dans une archive
+ 
+ tar -xf <nom archive> ........................pour extraire l'archive
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ zip = compresser
+ zip <nom du zip> <nom du fichier> <nom du fichier> ...........pour compresser un fichier
+ zip <nom du zip existant >   <nom du fichier>.................pour ajouter un fichier dans mon zip
+ unzip <nom du zip > pour decompresser un fichier
+ 
+ 
+ zip -1 pour choisir le niveau de compression
+ zip -9
+ 
+ zip -T pour tester un zip
+ 
+ zip -e pour mettre un mot de pass quand j'ajoute un fichier dans mon zip
+ 
+ zip -d pour suprimer un fichoier dans mon fichier zip
+ 
+ zip -r reparer un fichier
+ 
+ 
+ unzip <fichier.zip> -d /home/za/chemin/ou/mettre/mon/fichier_dezipper
+  
+ unzip <fichier.zip> "nomdu fichier" .....pour extraire un seul fichier de mon fichier zip
+ 
+ 
+ 
+ 
+ 
+ 
+  Pour super compresser des fichier(tremps de compression plus longue) 
+  coupler avec un tar:
+ 
+ tar -cf dossier.tar premierExemplefichier.txt deuxiemeExempleFichier.cpp
+ 
+ gzip dossier.tar
+ bzip2 dossier.tar (copresse encore plus)
+ 
+ 
+ pour coupler(tar et zip) en une seule commande : 
+ 
+ tar -zcf <fichier_tar_zip.tar.gz> <fichier_a_compresser> <fichier_a_compresser>
+ 
+ 
+ zcat out.tar.gz ....affiche le contenu d'un dossier compresser
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ diff <nom_du _fichier1> <nom_du_fichier2> ..................................affiche les différences entre les deux fichier.
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ apt=debutant
+ apt-get= pour sript(fonctionne toujours malgré mise a jour)
+ 
+ 
+ << cat /etc/apt/sources.list ..........     pour afficher les depot de ubuntu >>
+ 
+ info dans le dossiers depot:
+ backports =pour apporter des correctif sur des anciennes distributions
+ main =paquet libre maintenu par canonical
+ restrcted= non-libre maintenu par canonical
+ universe =libre gerer par la communauté ubuntu 
+ multiverse=non-libre gerer par la communauté ubuntu
+ 
+ 
+ apt cache =info sur un paquets et ses dependance
+ 
+ apt-get update  = mise a jour (liste des depots)
+ apt-get upgrade = mise a jour de nouvelles version des paquets
+ apt-get dist-upgrade = mise a jour paquets et dependance et nouveaux paquets 
+ 
+ apt-get install <paquet> : installer un programme
+ 
+ apt-get -f install <paquet> = corrige les probleme de dépendances
+ 
+ apt-get source <paquet> = telecharge source d'un paquet 
+ 
+ 
+ sudo apt-get remove <paquet>      : supprimer un paquet
+ 
+ sudo apt-get auto-remove <paquet> : supprimer paquet et dependances
+ 
+ sudo apt-get purge <paquet>       : supprimer paquet + fichoiers de configuration
+ 
+ sudo apt-get autoremove --purge <paquet>  : paquet + dependances +fichiers de configuration
+ 
+ 
+ 
+  
+ ppa
+ 
+ emplacement des ppa : /etc/apt/sources.list.d (repertoire)
+ 
+ add-apt repository ppa:<dépot>
+ +entrée
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+|    les processus     | 
+ 
+ 
+ 
+  
+ 
+ init est le premier processus ,le processus pére
+ un processus a un code excutable.
+ un processus qui ne renvoit pas un code retour a son pere est  un processus orphelin dit "zombi"
+ on peut faire adopter un processus zombi a init(qui est le pere de tout les processus.
+ 
+ chaque processus a son entree standar/sortie standar/sortie error
+ 
+ 
+ l'ordonanceur choisit les etats des processus:
+ 
+processus:    etat elu  processus qui a la main au moment T
+              etat pret en attente d'etre elu
+              etat bloqué processus non pret
+ 
+ 
+ r le programme est en execution
+ s le programe atend un evenement
+ t processus en pause
+ 
+ 
+ <commande> $?  retourne le code du processus        "0" = pas d'erreur
+ 
+echo $$ permet de retourner le numero du processus du shell utilisé. 
+echo $! retourne le dernier processus lancer en arriere fond
+<commande> &  = lance la commande en arriere plan
+ 
+ xeyes= creer des yeux
+ xeyes & = creer des yeux en arriere plan
+ 
+ 
+ ps -elf = pour voir les processus en detail
+ ps auwx = pour voir les processus en detail
+ 
+ ps | grep "xeyes" = pour retrouver mon numero de processus(ici :3004)
+ 
+ 
+ kill=pour envoyer un signal
+ 
+ kill -l =liste les fonctions de kill
+ 
+ kill -19 3004 = stop mon processus definie avec son numero
+ 
+ kill -18 3004 = redemarre mon processus definie avec son numero
+  
+ kill -9 3004 = kill un processus
+ 
+ kill -2 3004 = arrete un processus
+ 
+ killall firefox = tue tout les processus du programe (ex:firefox) souhaiter
+ 
+ 
+ 
+ fg forground =relance le dernier processus arreter /ou bascul un processus en arriere plan au premier plan
+ bg background =bascul un processus du premier plan en arriere plan 
+ 
+ jobs = liste les taches en cours
+ 
+ fg %1 = passe le processus numero un en premier plan
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ | ARBRE |
+ 
+ 
+ 
+ bin = fichier et programme (dont les commandes bash) qui s'executent 
+ boot = chargeur d'amorcage..bootloader  :  permet de boot sur un systeme ou un autre
+
+ cdrom =  NULL
+
+ dev = devices : périphériques
+ 
+ etc = Editing Text Config : fichiers de configurations programme et service systeme
+ 
+ home = fichiers des différents utilisateur
+
+ lib = bibliotéques du modul du noyaux
+
+ lib32 = NULL 
+ lib64 = NULL
+ libx32 = NULL
+
+ media = périphérique amovible : clé usb , disque dur externe etc...
+
+ mnt = montage manuel des périphériques de maniere temporaire
+
+ opt = optional : tout les programme qui ne sont pas installer avec apt
+
+ proc = processus : etat  noyaux , info systeme
+
+ root = repertoire du superUtilisateur
+
+ run = info systeme depuis le demarage du systeme
+
+ sbin = executable super important ,essentiel au fonctionnement du systeme
+
+ snap = NULL
+
+ srv = service systeme : qui tourne en tache de fond (deamon etc...)
+
+ sys = NULL
+
+ tmp = fichiers temporaire
+ 
+ usr = contient tout les programmes installés (bin : programme utilisateur | lib : biblioteque partagé pour tout logiciel aditionel |       local : tout les programme compilé maison | share : tout fichiers partagé comme les icone /usr/share/icons)
+ 
+ var = données diverses
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+|   sortie standart | 
+ 
+
+
+sortie standart :  >   redirige le flux standar (stdout)        >>    redirige sans ecraser le fichier 
+
+sortie ereur    :  2>  redirige le flux error (stderr)          2>>   redirige sans ecraser le fichier
+
+sortie clavier  :  <   dirige le dossier vers la commande       << permet de créer un prompt *
+
+
+* exemple:  echo <<  nomDeFinDeCommande
+          (prompt creer) >bonjour
+          		 >au revoir
+          		 >on continue
+          		 >nomDeFinDeCommande
+          		 
+          		 et toutes les lignes vont s'executer dans echo ou la commande choisi 
+
+
+ls -l > exempleFichier.txt   (grace au chevron = ">" je redirige le flux du shell dans un fichier)
+                                     ( ma commande ls -l s'enregistre dans un fichier et nom dans le terminal) 
+
+ ls -a >> exempleFichier.txt  (">>" double chevron =on ajoute en fin de fichier, si un chevron l'ancien fichier aurait été écrasé)
+ 
+ 
+ cat dossier.txt > toutVaBien.txt  2>fichiererror.log  ("2>"  permet d'enregistrer dans la sortit error du terminal dans un fichier) 
+ 
+ 
+ 
+ cat dossier.txt > fichier.txt 2>&1    lie la sortit standar et error dans un meme fichier
+ 
+ cat dossier.txt > /dev/null        (/dev/null c'est comme envoyer les donées dans un trou noir ...tout est perdu)
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  |        planification des taches :       |
+  
+  
+  %A ou %a  : jour (lettres - complet ou abrégé)
+  %B ou %b  : mois (lettres - complet ou abrégé)
+  
+  %d        : numero du jour (01 à 31)
+  %m        : numero du mois (01 à 12) 
+  %Y ou %y  : numero de l'année (ex: 2019 ou 19)
+ 
+ -------------------------------------------------
+ 
+  %H        : heure (00 à 23)
+  %M        : minute (00 à 59)
+  %S        : seconde (00 à 59)
+  %Z        : fuseau horaire
+  ------------------------------------------------
+  
+  Raccourcis :
+  
+   %F <=> %Y-%m-%d     (ex: 2022-09-13)
+   %T <=> %H:%M:%S     (ex: 08:57:14)
+   
+ -pour l'utiliser :  date "+%F" = (ex: 2022-09-13)
+ -pour l'utiliser :  date "+Nous sommes %A" = (ex: Nous sommes vendredi)
+ 
+ pour modifier l'heure de mon ordinateur :   sudo date 042116002018   :  04/21/16/00/2018 = mois/jour/heure/minute/année
+ 
+ 
+ 
+ 
+ 
+              | at |     (apt install at = planificateur de tache)
+ 
+ 
+# dans le terminal on ecrit la commande "at" suivi de l'heure a laquelle l'on souhaite quelle s'execute:
+ 
+ at 18:46 05/25/2019     (taper entrée)   (..on ajoute la date que si necéssaire et format americain mois/jour/année)            
+ -------------------------------------------------
+# le terminal affichera:
+ 
+ warning: command will be executed using /bin/sh
+ at> 
+ -----------------------------------------------------
+# on ecrit notre commande puis entrée :
+ 
+warning: command will be executed using /bin/sh
+ at> mv /home/jachampagne/datetime-formats.txt /home/jachampagne/formats.txt
+ at>
+ -------------------------------------------------------------------------------
+ 
+# si l'on a pas d'autre commande ctrl+d  et le terminal affichera ce message: 
+ 
+ warning: command will be executed using /bin/sh
+ at> mv /home/jachampagne/datetime-formats.txt /home/jachampagne/formats.txt
+ at> <EOT>
+ job 5 at Fri May 24 18:48:00 2019
+ -------------------------------------------------------------------------------
+ #la ou les commandes s'executeront automatiquement a l'heure voulus.
+ 
+ 
+ atq =affiche les tache programées avec at
+ atrm <n° de la tache programmée>  : suprimer la tache programée.
+ 
+
+
+ 
+ 
+ 
+ 		| cron |       pour utilisé cron on utilise la commande crontab -e (-e pour editer)
+
+ 
+ # En passant par crontab  editeur text le pc va s'ocuper de creer le fichier temp qui restera le temps que la tache s'execute.
+ 
+ 
+ #la derniere ligne commenter du ficher explique le format d'utilisation:
+ 
+ # m h  dom mon dow   command     = minute heure day_of_month month day_of_week  command  
+ (le premier jour du mois et de la semaine commence par un zero et le premier jour de la semaine est un dimanche)
+  (l'etoile : *  quand on ne veut rien spécifier
+
+exemple : 00 18 * * * /usr/bin/apt-get upgrade (ecrire le chemin de la commande en entier (whereis <command>)  
+exemple : 00 18 * * 1-3 du lundi au mercredi
+exemple : 00 18 * * 0,1 dimanche et lundi
+
+
+ctrl o
+ctrl x
+
+
+
+#ce messsage s'affiche :
+
+za@za-ThinkPad-T460s:~$ crontab -e
+no crontab for za - using an empty one
+crontab: installing new crontab
+
+
+
+crontab -l : affiche le fichier crontab avec les ligne de commande a la fin.
+crontab -r : supprimer le fichier crontab 
+ 
+ 
+ 
+ ps: ne fonctionne q'avec ce qui s'affiche en console (pas de graphique ) 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                       
+                                    | compte utilisateur |
+ 
+ 
+commande       < cat /etc/passwd  >
+ 
+ -la derniere ligne indique les utilisateur creer:
+ 
+  exemple =   za:x:1000:1000:za,,,:/home/za:/bin/bash
+     
+ za est l'identifiant  (les deux points sont comme un separateur) 
+ x : est le mot de passe    
+ 1000 : identifiant utilisateur  
+ 1000 :  identifiant groupe 
+ za,,, :  information sur l'utilisateur 
+ /home/za : chemin du dossier utilisateur
+  /bin/bash  shell executer lors de ma connection a cette utilisateur
+ 
+
+les mots de passe sont stoker dans un autre fichier =
+ /etc/shadow  et sont chiffré donc doivent etre craqué si on veut les recupérés ou desactiver shadow et le réactivé
+ 
+ 
+ 
+commande   < cat /etc/group > 
+
+( permet de montrer tout les group y comprit ceux util au systeme)
+ 
+ NB : toutes les infos personnel sont stocké aussi dans un fichier shadow
+ 
+ a chaque creation utilisateur un group lui est créer
+ 
+ 
+ 
+ sudo adduser <nom_du_nouvel_utilisateur>   : ajoute un nouvel utilisateur
+ su <user>                                  :pour ce connecter a l'utilisateur 
+ sudo passwd <user>                         : nouveau mot de pass 
+ sudo deluser <user>                        : supprime un utilisateur (penser a suprimer son group)
+ sudo usermod riri -G sudo                  : ajoute l'utilisateur au group sudo (voir les autres differentes option avec man)
+ groups                                     :voir tout les groupes existant
+ users                                      :voir tout les utilisateurs existant
+ who                                        :indique les utilisateur qui ce sont connecté a un pc precis
+ w                                          :liste les utilisateur connecté au reseau
+ tload                                      :representation graphique/console de l'activiter de la machine
+ 
+ 
+ changer le mot de passe root:
+$ sudo passwd root
+[sudo] password for <votre identité>:
+Entrez le nouveau mot de passe UNIX : (inscrire un nouveau mot de passe)
+Retapez le nouveau mot de passe UNIX : (répéter le nouveau mot de passe)
+passwd : le mot de passe a été mis à jour avec succès 
+ 
+pour changer le mot de pass sudo par le mot de pass root
+visudo
+Defaults        env_reset,rootpw
+Defaults        env_reset,rootpw,insults 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                                     | reseau |
+ 
+ 
+ 
+ za@nunux:~$       la partie "nunux" represente le "hostname" = le nom de ma machine
+ 
+ cat /etc/hostname = permet de retrouver le hostname(si on l'edite en superUtilisateur on peut la modifier)
+ hostname = perment de conaitre le nom de sa machine
+
+
+
+
+ 
+ 
+ host <nom de domaine>  :affiche tout les infos de ce domaine dont l'adresse IP
+ -----------------------------------------------
+ ex : host google.fr
+ 
+za@za:~$ host gooogle.fr 
+gooogle.fr has address 81.169.254.196 (=adresse ip du serveur de google a un moment T )
+gooogle.fr has IPv6 address 64:ff9b::51a9:fec4
+gooogle.fr mail is handled by 10 mail.gooogle.fr.
+---------------------------------------------------------
+
+
+
+
+
+permet de bloquer des sites/permet aussi de voir ses ip machine)
+---------------------------------------------------------
+za@za:~$ nano /etc/hosts   
+
+
+127.0.0.1	localhost         (=adresse IP de ma machine en local)
+127.0.1.1	za-ThinkPad-T460s  (=adresse ip de ma machine)
+
+126.83.40.12    localhost (si j'ecrit l'adresse ip d'un site puis localhost..le site sera automatiquement rediriger vers la machine)
+                          (c'est un bon moyen pour bloquer un site)
+
+# The following lines are desirable for IPv6 capable hosts
+::1     ip6-localhost ip6-loopback  (= equivalent en mode ipv6 de localhost   " ::1 "  )
+fe00::0 ip6-localnet
+ff00::0 ip6-mcastprefix
+ff02::1 ip6-allnodes
+ff02::2 ip6-allrouters
+
+ 
+ ---------------------------------------------------------
+ 
+ whois <nomdusite.fr> = permet d'avoir des infos sur un site dont le nom de l'hebergeur 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+                    -----------
+                   | PARE-FEU |
+                    -----------
+                    
+                    
+   exemple de firewall: iptables(historique)
+   
+   cat /etc/services :pour afficher les numero de port lié au protocol.
+   ---------------------
+   
+         ufw : NE JAMAIS MODIFIE LE PARE FEU ACTIF
+         
+   cat /etc/default/ufw   (tout ce passe dans ce fichier)
+   
+   
+   
+   -sudo ufw status :     pour savoir si le parefeu est activer et ses parametre 
+   
+   -sudo ufw default deny incoming       : par default je bloque tout ce qui rentre
+   -sudo ufw default allow outgoing       : par default j'autorize tout ce qui sort
+   
+  - sudo ufw allow http         (port "80")    autorise http a rentrer
+  - sudo ufw allow https        (port "443")   on peut aussi ecrire : "sudo ufw allow 443"
+  - sudo ufw allow ssh         (port "22")   autorize connection a distance
+  
+                                              [ pour autorizer les sorties il faux  précisé "in"    ex: sudo ufw allow in http]
+  
+  
+  -sudo ufw enable            le pare-feu est actif et lancé au demarage du systeme
+  -sudo ufw disable           le pare-feu est désactiver
+  -sudo ufw reset             suprime toutes les regles du parefeu
+  -sudo ufw status verbose    info sur les regles detaillé du parefeu   
+  -sudo ufw status numbered   affiche les numero de regles 
+  -sudo ufw delete <n°>       si je veux supprimer un numero de regle spécifique   
+   
+   
+   sudo ufw allow 5200:5500/tcp   pour autorizer une plage de port
+   
+   sudo ufw allow https from <ip> to any port 443  on authorize https depuis cette adresse ip et uniquement pour le port 443 
+   
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 					       | Les Commandes |
+ 
+ 
+man <commande bash> : notice d'une commande 
+ctrl+t = ouvre le terminal
+exit = ferme le terminal 
+ 
+ 
+ pour lier des commandes on utilise "|" (le pipe)    exemple:  ps | grep "firefox" 
+ 
+ <commande> ; <commande>  permet d'aditionner les commande a faire
+ <commande> && <commande> lance la commande si le premier processus commande ne retourne pas d'erreur
+ commande> || <commande> lance la commande si le premier processus commande retourne une ereur
+ 
+
+
+sudo su root = pour passer en superUtilisateur
+su <utilisateur> = pour repasser en normal
+ 
+ 
+cd <dossier>   : pour ce deplacer
+cd ..          : pour revenir en arriere
+cd ~           : retour à /home/utilisateur
+cd /           : retour à l'origine de l'arborescence
+
+touch : creer un fichier
+mkdir : creer un dossier 
+cp    : copier      cp <fichier.txt> /home/destination
+mv    : deplacer ou renomer 
+rm -r : suprimer definitif
+ls    : afficher le contenu d'un dossier
+ls -R : affiche tout les fichiers de maniere recursive
+cat   : affiche le contenu d'un  fichier dans le terminal
+
+ 
+# nano : editeur de texte (nano -B =creer une sauvgarde automatique) (nano -LlB doc.t =permet de virer le dernier numero de ligne)
+#    /etc/nanorc  =parametre de base a modifier pour tout les user       (nano -T 4 main.c pour avoir des tabulations de 4 cases)
+#                                                                        (nano -M  pour avoir acces a la souris dans nano)
+#    Pour appliquer des option uniquement a un utilisateur:
+#    /home/<user>.nanorc  et l'on copie les options que l'on veut de /etc/nanorc   a /home/<user>.nanorc  
+
+ 
+ps   : lister les processus en cours
+jobs : liste processus en arriere plan
+ 
+date : (permet d'afficher la date / l'heure actuel sur mon terminal)
+ 
+ atq                               : affiche les taches programmées avec at
+ atrm <n°> de la tache programmée>  : suprimer la tache programée avec at
+
+crontab -e : edite un fichier pour cron 
+crontab -l : affiche le fichier crontab avec les ligne de commande a la fin.
+crontab -r : supprimer le fichier crontab
+ 
+ shutdown ou halt -p  : pour eteindre le pc(voir avec man)
+ select-editor        : pour choisir son editeur de texte par defaut
+ 
+ 
+ sudo adduser <nom_du_nouvel_utilisateur>   : ajoute un nouvel utilisateur
+ su <user>                                  :pour ce connecter a l'utilisateur 
+ sudo passwd <user>                         : nouveau mot de pass 
+ sudo deluser <user>                        : supprime un utilisateur (penser a suprimer son group)
+ sudo usermod riri -G sudo                  : ajoute l'utilisateur au group sudo (voir les autres differentes option avec man)
+ groups                                     :voir tout les groupes existant
+ users                                      :voir tout les utilisateurs existant
+ who                                        :indique les utilisateur qui ce sont connecté a un pc precis
+ w                                          :liste les utilisateur connecté au reseau
+ tload                                      :representation graphique/console de l'activiter de la machine
+ 
+ 
+ 
+ wget  <lien du fichier a telecharger>     : permet de telecharger un fichier depuis le terminal bash
+ 
+ 
+commande for know the  keys of your keyboard:
+xev | awk -F'[ )]+' '/^KeyPress/ { a[NR+2] } NR in a { printf "%-3s %s\n", $5, $8 }' 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ les paquets a installer :
+
+     sudo apt install :
+ 
+ stacer (gestionaire de tache)
+ at     (gestion evenement/processus)
+ pinky  (gestion des utilisateur)
+ finger?(gestion des utilisateur)ancienne version
+ whois (donne des information sur les sites web)
+ sl    (le ptit train)
+ build-essantial  (gcc)
+ ufw (simple pare-feu)
+gnome-tweaks
+
+
+
+
+
+
+
+
+ code gnome: 
+ background termilal: #3F3F3F
+                                           #262626
+ 
+ pour contracter les fenetre ouverte : 
+ gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
+
+cpaslock= escape
+sudo apt install gnome-tweaks
+(keyboard & mouse/additional layout options/ caps locks behavior/make caps lock an additional Esc)
+
+
+lubuntu ;
+
+remap key capslock =escape
+sudo apt-get install xcape
+setxkbmap -option ctrl:nocaps
+ xcape -e 'Control_L=Escape
+
+
+ 

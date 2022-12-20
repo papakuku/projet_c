@@ -1,3 +1,18 @@
+
+
+
+
+
+
+
+           | premiere etape |
+
+
+
+
+
+
+
 CC=gcc
 EXEC=prog
 
@@ -22,11 +37,41 @@ mrproper: clean
 
 
 
+-----------------------------------------------------------------------------------------------------
+
+
+              | 2eme etape |
+
+
+
+
 #variables special:  $@ nom cible /  $< nom premiere dependance / $^ liste dependance / $? liste dependance plus recent que lq cible / $* nom fichier sans son extension:
 
 
 
 
+CC=gcc
+EXEC=prog
+SRC= $(wildcard *.c)
+OBJ= $(SRC:.c=.o)
+
+
+
+all : $(EXEC)
+
+
+%.o :  %.c
+	$(CC) -o $@ -c $<
+
+$(EXEC) : $(OBJ)
+	$(CC) -o $@ $^
+
+
+clean:
+	rm -r *.o
+
+mrproper: clean
+	rm -r prog
 
 
 

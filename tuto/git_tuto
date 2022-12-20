@@ -1,0 +1,394 @@
+
+
+
+
+
+
+
+     |   GIT       |
+
+
+
+
+
+
+
+
+
+
+important necessary acompte github
+
+
+make file
+
+
+github psswd:
+
+papaku@mailfence.com
+
+
+personal acces token ; setting(clickdroit photo profil)+setting+develloper setting+personal acces token +token classic+generate new token+generate new token classic>>>>
+
+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
+
+git clone https://github.com/papakuku/projet_c.git
+
+
+
+--------------------------------------------------------------------------------------
+
+
+
+dans le terminal (dans the folder que tu veut ):
+
+git clone https://github.com/xaviergauthier/c.git
+
+git config --global user.name "necros"
+git config --global user.email "xavgauth16@gmail.com"
+
+
+git add "nom du fichier"   ou git add -A (pour tout ajouter)
+
+
+git commit -m "commentaire sur le commit"
+
+
+
+git status : donne des infos sur l'etat de git
+
+
+
+git push : met a jour le dossier sur git hub
+
+(si il demande un mot de passe et que sa ne marche pas on peut crer un personal acces tolken)
+papaku
+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
+
+
+
+__________________________________________________________________________________________________
+git config --global user.name "necros"
+
+
+git config --global user.email "xavgauth16@gmail.com"
+
+
+
+
+1 creer son dossier projet
+
+
+2 terminal :
+
+
+
+git init   #initialise le projet
+
+git status  #donne les informations sur mes fichiers
+
+
+ sauver le projet:
+
+git add <file>  #prend une photo du projet
+git commit -m "text explicatif de la raison de le packer"  #pack le projet 
+
+
+
+si modification:
+
+git add <file>    #on repete l'etape sauver le projet
+it commit -m "text explicatif de la raison de le repacker"
+
+
+
+git log : timeline des actions effectuer avec git
+
+
+
+
+
+les branch :
+
+on commence avec une brach master 
+puis on en crés d'autre pour travailler sur un projet et ne mettre que le projet fini sur la master
+
+
+git branch <nom-de la branch>  #pour créer une branche
+
+git branch     #pour afficher toutes les branches existantes
+
+
+git checkout <nom de la branch> pour basculer sur la nouvelles branch
+
+
+
+#puis on peut repack sur la nouvelle branch
+
+
+
+#pour valider le projet final on passe sur la branche "master
+
+git checkout master
+
+# on rapatrit la brache que l'on souhaite sur master grace a git merge:
+
+
+git merge <nom de la brache a rapatrié sur la brache souhaitée>
+
+
+
+
+
+
+##pour suprimer une branche :
+
+
+git branch -D <nom de la branche a supprimer>
+
+
+
+
+
+
+
+                       |     les depots distant    |
+                       
+                       
+
+git remote add <nom de code du depot> https://github.com/zlotech/blackbird.git 
+ #l'adresse du depot est trouvable sur github puis selectionner le depot creer au péalable
+
+
+
+git remote :permet de voir les depots distant enrgistrer dans git
+
+
+
+
+git push origin master    : et les depots seront envoyers dans mon dossier
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+aller sur github creer un compte et un repository
+
+
+
+
+dans le terminal (dans the folder que tu veut ):
+
+git clone https://github.com/xaviergauthier/c.git
+
+
+git add "nom du fichier"   ou git add -A (pour tout ajouter)
+
+
+git commit -m "commentaire sur le commit"
+
+
+
+git status : donne des infos sur l'etat de git
+
+
+
+git push : met a jour le dossier sur git hub
+
+(si il demande un mot de passe et que sa ne marche pas on peut crer un personal acces tolken)
+
+
+
+__________________________________________________________________________________________________
+git config --global user.name "necros"
+
+
+git config --global user.email "xavgauth16@gmail.com"
+
+
+
+
+1 creer son dossier projet
+
+
+2 terminal :
+
+
+
+git init   #initialise le projet
+
+git status  #donne les informations sur mes fichiers
+
+
+ sauver le projet:
+
+git add <file>  #prend une photo du projet
+git commit -m "text explicatif de la raison de le packer"  #pack le projet 
+
+
+
+si modification:
+
+git add <file>    #on repete l'etape sauver le projet
+it commit -m "text explicatif de la raison de le repacker"
+
+
+
+git log : timeline des actions effectuer avec git
+
+
+
+
+
+les branch :
+
+on commence avec une brach master 
+puis on en crés d'autre pour travailler sur un projet et ne mettre que le projet fini sur la master
+
+
+git branch <nom-de la branch>  #pour créer une branche
+
+git branch     #pour afficher toutes les branches existantes
+
+
+git checkout <nom de la branch> pour basculer sur la nouvelles branch
+
+
+
+#puis on peut repack sur la nouvelle branch
+
+
+
+#pour valider le projet final on passe sur la branche "master
+
+git checkout master
+
+# on rapatrit la brache que l'on souhaite sur master grace a git merge:
+
+
+git merge <nom de la brache a rapatrié sur la brache souhaitée>
+
+
+
+
+
+
+##pour suprimer une branche :
+
+
+git branch -D <nom de la branche a supprimer>
+
+
+
+
+
+
+
+                       |     les depots distant    |
+                       
+                       
+
+git remote add <nom de code du depot> https://github.com/zlotech/blackbird.git 
+ #l'adresse du depot est trouvable sur github puis selectionner le depot creer au péalable
+
+
+
+git remote :permet de voir les depots distant enrgistrer dans git
+
+
+
+
+git push origin master    : et les depots seront envoyers dans mon dossier
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
