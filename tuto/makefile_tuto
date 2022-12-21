@@ -64,7 +64,7 @@ all : $(EXEC)
 	$(CC) -o $@ -c $<
 
 $(EXEC) : $(OBJ)
-	$(CC) -o $@ $^
+	$(CC) -o $@ $^ && ./prog
 
 
 clean:
