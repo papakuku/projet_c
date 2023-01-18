@@ -88,7 +88,7 @@ ctrl+r    = go on
 u         = go back
 .         = execute the command just executed before 
 
-r + <lettre>  = change the letter by other letter
++ <lettre>  = change the letter by other letter
 
              "delet mean cut"
 d =delet
@@ -146,10 +146,15 @@ zz= center your text
 visual mode....select line+ >  = edentation on right
 visual mode....select line+ >  = edentation on left
 
+
+
+
 select line and "="      = edentation all the script selelected
 gg=G endent propably all the text
 
+
 / <word>  = jump to the word inside the script 
+
 / <word>  +n   =jump to the word and and jump to the next similar word
 / <word>  +N   =jump-back to the pevious word
 ? <word>   =  do same but from the end to the beginig
