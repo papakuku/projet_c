@@ -1,0 +1,134 @@
+Exercice 1 : Calcul de moyenne
+Écrire un programme qui demande à l'utilisateur de saisir trois nombres réels et qui calcule leur moyenne. Le programme doit afficher la moyenne avec deux décimales après la virgule. Si la moyenne est supérieure à 10, le programme doit afficher "Bravo !" sinon, il doit afficher "Peut mieux faire !".
+
+Exemple d'entrée/sortie :
+Entrée :
+4
+8
+6
+Sortie :
+Moyenne : 6.00
+Peut mieux faire !
+
+Entrée :
+12.5
+15.25
+18.75
+Sortie :
+Moyenne : 15.50
+Bravo !
+
+
+
+
+-------------
+correction:
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    float a, b, c, moyenne;
+    printf("Entrez trois nombres réels : ");
+    scanf("%f %f %f", &a, &b, &c);
+    moyenne = (a + b + c) / 3;
+    printf("Moyenne : %.2f\n", moyenne);
+    if (moyenne > 10) {
+        printf("Bravo !\n");
+    } else {
+        printf("Peut mieux faire !\n");
+    }
+    return 0;
+}
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Exercice 2 : Conversion Celsius - Fahrenheit
+Écrire un programme qui demande à l'utilisateur de saisir une température en degrés Celsius et qui la convertit en degrés Fahrenheit en utilisant la formule suivante : f = c * 1.8 + 32. Le programme doit afficher la température en degrés Fahrenheit avec une précision de deux décimales après la virgule. Si la température en Fahrenheit est supérieure ou égale à 100, le programme doit afficher "Attention, il fait chaud !" sinon, il doit afficher "La température est agréable."
+
+Exemple d'entrée/sortie :
+Entrée :
+25
+Sortie :
+Température en Fahrenheit : 77.00
+La température est agréable.
+
+Entrée :
+37.5
+Sortie :
+Température en Fahrenheit : 99.50
+Attention, il fait chaud !
+
+
+----------------------------------------------------------------
+corection
+
+
+#include <stdio.h>
+
+int main() {
+    float celsius, fahrenheit;
+    printf("Entrez une température en Celsius : ");
+    scanf("%f", &celsius);
+    fahrenheit = celsius * 1.8 + 32;
+    printf("Température en Fahrenheit : %.2f\n", fahrenheit);
+    if (fahrenheit >= 100) {
+        printf("Attention, il fait chaud !\n");
+    } else {
+        printf("La température est agréable.\n");
+    }
+    return 0;
+}
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+Exercice 3 : Calcul de TVA
+Écrire un programme qui demande à l'utilisateur de saisir le montant HT d'une facture ainsi que le taux de TVA en pourcentage. Le programme doit calculer le montant TTC et l'afficher avec deux décimales après la virgule. Si le montant TTC est supérieur ou égal à 100, le programme doit afficher "La facture est élevée." sinon, il doit afficher "La facture est raisonnable."
+
+Exemple d'entrée/sortie :
+Entrée :
+100
+20
+Sortie :
+Montant TTC : 120.00
+La facture est élevée.
+
+Entrée :
+50
+10
+Sortie :
+Montant TTC : 55.00
+La facture est raisonnable.
+
+
+-------------------
+
+correction
+
+
+
+
+#include <stdio.h>
+
+int main() {
+    float montant_HT, taux_TVA, montant_TTC;
+    printf("Entrez le montant HT : ");
+    scanf("%f", &montant_HT);
+    printf("Entrez le taux de TVA en pourcentage : ");
+    scanf("%f", &taux_TVA);
+    montant_TTC = montant_HT * (1 + taux_TVA / 100);
+    printf("Montant TTC : %.2f\n", montant_TTC);
+    if (montant_TTC >= 100) {
+        printf("La facture est élevée.\n");
+    } else {
+        printf("La facture est raisonnable.\n");
+    }
+    return 0;
+}
