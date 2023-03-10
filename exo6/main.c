@@ -9,6 +9,9 @@ int main(void)
 {
 
 	gameManager();
-	
+
+
+        
+
 return 0;
 }
