@@ -1,5 +1,4 @@
 
-
 |    VIM   |
 
 
@@ -29,7 +28,7 @@ set tabstop=4
 set shiftwidth=4
 set autoindent
 set mouse=a
-colorscheme slate
+ 
 
 
 call  plug#begin()
@@ -53,8 +52,12 @@ call  plug#end()
 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
-dans vim:        plug install
+dans vim:        Plug Install
 
+
+
+Ps:        ctrl+c            ctrl+shift +v
+              ctrl+shift+y         ctrl+v
 
 -----------------------------------------------------------------------------
 Quickfixlist tuto:
@@ -88,7 +91,7 @@ ctrl+r    = go on
 u         = go back
 .         = execute the command just executed before 
 
-+ <lettre>  = change the letter by other letter
+r + <lettre>  = change the letter by other letter
 
              "delet mean cut"
 d =delet
@@ -146,15 +149,10 @@ zz= center your text
 visual mode....select line+ >  = edentation on right
 visual mode....select line+ >  = edentation on left
 
-
-
-
 select line and "="      = edentation all the script selelected
 gg=G endent propably all the text
 
-
 / <word>  = jump to the word inside the script 
-
 / <word>  +n   =jump to the word and and jump to the next similar word
 / <word>  +N   =jump-back to the pevious word
 ? <word>   =  do same but from the end to the beginig
@@ -206,6 +204,113 @@ qall - quit all open files
 
 :qall! - forcefully quit all the files, discarding the changes:
 
+
+  | BUFFER |
+
+  :edit   /   :e         =  open a file
+  :badd                  = open file in background
+  :sp     / :split                  =  split
+:vs    /   vsplit     =  split in vertical
+:ls / :files / :buffers     =   show the buffers open
+
+:buffer / :buffer <file>     = move to the buffer file
+:bufferN   = move to the buffer number N
+:bp /bufferprevious     =   move to the previous buffer
+:bn / buffernext  = move to the next buffer
+:bl       =  jump to the last buffer
+:bf / bfirst = jump to the first buffer
+
+;ball    =open all buffer in horizontal
+:vertical ball =open all buffer in vertical
+
+-----------------------TRY:
+
+
+Let's look at another example. Here, I made a few edits to 'a.rs' file and hid it using :set hidden command. Then I switched to editing 'main.c' without writing out any modifications that I made to 'a.rs'.
+
+And now the flags of 'a.rs' indicate exactly that with #h + flags.
+
+# -> It was the last file to be edited in the current window (before I switched to editing 'main.c')
+h -> It is a hidden buffer
++ -> It was modified but changes weren't saved to the disk
+
+---------------------------------------------
+
+
+:bdelete / :bd      = delete the buffer
+:1,4bd                   =delete the buffer 1,2,3,,4
+
+
+
+
+
+
+(:set hidden) in .vimrc         no message when you swich between buffer no save 
+----------------------------------------------------------------------------------------------
+% : Buffer which is in the current window
+# : Alternate buffer (the last file which was most recently edited in the current window)
+a : Active buffer (the file which is being edited in the current window)
+h : Hidden buffer (buffer with unsaved modifications but is not being displayed in any window)
+u : Unlisted buffer (files that are not open in Vim but are present in the current working directory; use :ls! to view this)
+- : Buffer with 'modifiable' set to off
+= : A read-only buffer
++ : A modified buffer (buffer with changes that are not written to disk)
+x : A buffer that has read errors
+-----------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+|  tab |
+
+
+
+tabnew =create new tab
+tabe = edittab with file
+tabs = list all tab and file
+gt   = (next tab (in normal mode)
+gT = previous tab (in normal mode)
+tabn = next tab  (command mode)
+tanbp = previous tab (command mode)
+
+
+:tab ball show each buffer in a tab (up to 'tabpagemax' tabs) 
+
+:tab help open a new help window in its own tab page 
+
+:tab drop {file} open {file} in a new tab, or jump to a window/tab containing the file if there is one 
+
+:tab split copy the current window to a new tab of its own
+
+
+
+
+
+tabs list all tabs including their displayed windows :tabm 0 move current tab to first 
+
+:tabm move current tab to last :tabm {i} move current tab to position i+1
+
+ :tabm +{i} move current tab right to current position+i 
+
+:tabm -{i} move current tab left to current position-i 
+
+:tabn go to next tab 
+
+:tabp go to previous tab 
+
+:tabfirst go to first tab
+
+ :tablast go to last tab 
+
+In normal mode, you can type:
+
+gt go to next tab gT go to previous tab {i}gt go to tab in position i
 
 
 

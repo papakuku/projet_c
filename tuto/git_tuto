@@ -4,7 +4,6 @@
 
 
 
-
      |   GIT       |
 
 
@@ -29,11 +28,11 @@ papaku@mailfence.com
 
 personal acces token ; setting(clickdroit photo profil)+setting+develloper setting+personal acces token +token classic+generate new token+generate new token classic>>>>
 
-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
+
 
 git clone https://github.com/papakuku/projet_c.git
 
-
+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
 
 --------------------------------------------------------------------------------------
 
@@ -41,10 +40,10 @@ git clone https://github.com/papakuku/projet_c.git
 
 dans le terminal (dans the folder que tu veut ):
 
-git clone https://github.com/xaviergauthier/c.git
+git clone https://github.com/papakuku/projet_c.git
 
-git config --global user.name "necros"
-git config --global user.email "xavgauth16@gmail.com"
+git config --global user.name "papaku"
+git config --global user.email "papaku@mailfence.com"
 
 
 git add "nom du fichier"   ou git add -A (pour tout ajouter)
@@ -62,8 +61,9 @@ git push : met a jour le dossier sur git hub
 
 (si il demande un mot de passe et que sa ne marche pas on peut crer un personal acces tolken)
 papaku
-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
 
+
+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
 
 
 __________________________________________________________________________________________________
@@ -378,6 +378,7 @@ git push origin master    : et les depots seront envoyers dans mon dossier
 
 
  
+
 
 
 

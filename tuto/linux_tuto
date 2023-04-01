@@ -921,8 +921,17 @@ gnome-tweaks
 
 
  code gnome: 
+
+gnome extension:
+
+sudo apt install gnome-shell-extension-manager gir1.2-gtop-2.0 lm-sensors
+
+
  background termilal: #3F3F3F
                                            #262626
+
+  a installer:
+  sudo apt-get install build-essential sl git curl htop neofetch vim gnome-tweaks
  
  pour contracter les fenetre ouverte : 
  gsettings set org.gnome.shell.extensions.dash-to-dock click-action 'minimize'
@@ -938,6 +947,25 @@ remap key capslock =escape
 sudo apt-get install xcape
 setxkbmap -option ctrl:nocaps
  xcape -e 'Control_L=Escape
+
+
+ minimaze windows maximaize :
+
+ his should work: sh -c 'wmctrl -r :ACTIVE: -b add,maximized_vert && wmctrl -r :ACTIVE: -b add,maximized_horz'
+Use this line as command in lxqt shortcut editor and disable meta+up in openbox
+1
+User avatar
+level 2
+BubblyMango
+Op ·
+1 yr. ago
+· edited 1 yr. ago
+
+Thanks man
+
+Yeah i was trying to avoid using CLIi tools such as wmctrl and xdotool, but since i found nothing online i guess there is no helping it.
+
+BTW your version can be shorted to 1 command: sh -c 'wmctrl -r :ACTIVE: -b add,maximized_vert,maximized_horz . or even replace "add" with "toggle" to also be able to unmaximize.
 
 
  

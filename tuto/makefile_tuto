@@ -1,3 +1,5 @@
+|  MAKEFILE |
+
 
 
 
@@ -64,7 +66,7 @@ all : $(EXEC)
 	$(CC) -o $@ -c $<
 
 $(EXEC) : $(OBJ)
-	$(CC) -o $@ $^ && ./prog
+	$(CC) -o $@ $^
 
 
 clean:
