@@ -19,6 +19,11 @@
 
 		initArea(gameArea,playerI,playerJ);
 
+	
+
+
+
+
 		do
 		{
 
